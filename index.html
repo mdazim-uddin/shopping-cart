@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+             <button id="maiNus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+    <input type="text" class="form-control text-center" id="cartValue" value="1">
+<button id="cartItem" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$<span id="cartAmount">1219</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+            <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+    <button id ="maiNusCover" class="btn btn-default"><i class="fas fa-minus"></i></button>
+   <input  type="text" class="form-control text-center" id ="cover"value="1">
+          <button id="handClick" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$59</h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>-->
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal:</h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$<span id="SubTotal">1278</span></h5>
+                        <h5>$0</h5>
+                        <h5>$<span id="Total">1278</span></h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+<script>
+     let cartAdd = document.getElementById('cartItem');
+   cartAdd.addEventListener('click', function () {
+      let cartValue=document.getElementById('cartValue').value;
+      cartValue=parseFloat(cartValue);
+     cartValue++;
+     document.getElementById('cartValue').value=cartValue;
+
+      let cartAmount =document.getElementById('cartAmount').innerText;
+    let currentAmountNumber = parseFloat(cartAmount)
+    let total=currentAmountNumber+1219;
+      document.getElementById('cartAmount').innerText=total;
+ 
+  let Subtotal =document.getElementById('SubTotal').innerText;
+  let subtotalNumber = parseFloat( Subtotal)
+  let totalSubtotal =subtotalNumber+1278;
+  document.getElementById('SubTotal').innerText=totalSubtotal;
+
+  let carttotal =document.getElementById('Total').innerText;
+  let totalNumber= parseFloat(carttotal)
+  let lastTotal = totalNumber+1278;
+    document.getElementById('Total').innerText=lastTotal;
+
+    
+
+   })
+   //cart-item -- end
+    let handAdd =document.getElementById('handClick');
+   handAdd.addEventListener('click', function () {
+      let handValue=document.getElementById('cover').value;
+      handValue=parseFloat(handValue);
+    handValue++;
+     document.getElementById('cover').value=handValue;
+
+
+
+      let cartAmount =document.getElementById('cartAmount').innerText;
+    let currentAmountNumber = parseFloat(cartAmount)
+    let total=currentAmountNumber+59;
+      document.getElementById('cartAmount').innerText=total;
+ 
+  let Subtotal =document.getElementById('SubTotal').innerText;
+  let subtotalNumber = parseFloat( Subtotal)
+  let totalSubtotal =subtotalNumber+59;
+  document.getElementById('SubTotal').innerText=totalSubtotal;
+
+  let carttotal =document.getElementById('Total').innerText;
+  let totalNumber= parseFloat(carttotal)
+  let lastTotal = totalNumber+59;
+    document.getElementById('Total').innerText=lastTotal;
+
+
+   })
+//mainus--are
+     let mainusAdd = document.getElementById('maiNus');
+  mainusAdd.addEventListener('click', function () {
+      let mainusValue=document.getElementById('cartValue').value;
+      mainusValue=parseFloat(mainusValue);
+     mainusValue--;
+     document.getElementById('cartValue').value=mainusValue;
+
+       let cartAmount =document.getElementById('cartAmount').innerText;
+    let currentAmountNumber = parseFloat(cartAmount)
+    let total=currentAmountNumber-1219;
+      document.getElementById('cartAmount').innerText=total;
+ 
+  let Subtotal =document.getElementById('SubTotal').innerText;
+  let subtotalNumber = parseFloat( Subtotal)
+  let totalSubtotal =subtotalNumber-1278;
+  document.getElementById('SubTotal').innerText=totalSubtotal;
+
+  let carttotal =document.getElementById('Total').innerText;
+  let totalNumber= parseFloat(carttotal)
+  let lastTotal = totalNumber-1278;
+    document.getElementById('Total').innerText=lastTotal;
+
+
+
+ 
+ })
+//mainus-cover
+
+   let coverAdd =document.getElementById('maiNusCover');
+  coverAdd.addEventListener('click', function () {
+      let coverValue=document.getElementById('cover').value;
+      coverValue=parseFloat(coverValue);
+    coverValue--;
+     document.getElementById('cover').value=coverValue;
+
+})
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
